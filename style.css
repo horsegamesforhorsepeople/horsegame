@@ -395,7 +395,7 @@ input[type="color"] {
     transform: translate(-50%, -50%);
   }
   #container-for-everything {
-    height: 100svh;
+    height: 100lvh;
   }
 }
 
