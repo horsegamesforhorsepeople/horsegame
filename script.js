@@ -733,7 +733,7 @@ function generateEmojiBoard() {
 function copySeed() {
   summonCopyText()
   let seed = board.join("").split(",").join("");
-  let copyVal = `https://mares.w3spaces.com/index.html?seed=${seed}`
+  let copyVal = `https://horsegamesforhorsepeople.github.io/horsegame/index.html?seed=${seed}`
   navigator.clipboard.writeText(copyVal);
 }
 
@@ -745,44 +745,3 @@ function summonCopyText() {
     createWordBox();
   }, 500);
 }
-
-/* We come back to this later:tm:
-
-const canvas = document.getElementById("canvas");
-const context = canvas.getContext("2d");
-
-let sizeWidth = 100 * window.innerWidth / 100
-let sizeHeight = 100 * window.innerHeight / 100 || 766;
-
-canvas.width = sizeWidth;
-canvas.height = sizeHeight;
-
-function lineShenanigans(letter) {
-  var rect = letter.getBoundingClientRect();
-  console.log(rect.top + letter.clientHeight / 2)
-
-  let centerX = rect.left + letter.clientWidth / 2;
-  let centerY = rect.top + letter.clientHeight / 2;
-
-  let mouseX = centerX;
-  let mouseY = centerY;
-  
-  function drawLine() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.beginPath();
-    context.moveTo(centerX, centerY);
-    context.lineTo(mouseX, mouseY);
-    context.stroke();
-  }
-  
-  canvas.addEventListener("mousemove", function(event) {
-    mouseX = event.clientX - canvas.getBoundingClientRect().left;
-    mouseY = event.clientY - canvas.getBoundingClientRect().top;
-    drawLine();
-  });
-  
-  drawLine();
-}
-
-lineShenanigans(letterSquares[5])
-*/
