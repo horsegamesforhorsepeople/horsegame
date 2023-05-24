@@ -7,85 +7,85 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  
-  <div id="settings-page">
-    <button onclick="showSettings(false)">Close</button>
-      <table>
-        <tr>
-          <td>Primary Color: </td>
-          <td>
-            <input id="color-picker" type="color">
-          </td>
-        </tr>
-      </table>
-      <button id="apply-changes">Apply Changes</button>
-      <div id="preview-container">
-        <div id="stats-preview">
-          <p id="words-amount-preview">WORDS: 18</p>
-          <p id="score-preview">SCORE: 12000</p>
-          <p id="time-left-preview">80</p>
+  <div id="container-for-everything">
+    <div id="settings-page">
+      <button onclick="showSettings(false)">Close</button>
+        <table>
+          <tr>
+            <td>Primary Color: </td>
+            <td>
+              <input id="color-picker" type="color">
+            </td>
+          </tr>
+        </table>
+        <button id="apply-changes">Apply Changes</button>
+        <div id="preview-container">
+          <div id="stats-preview">
+            <p id="words-amount-preview">WORDS: 18</p>
+            <p id="score-preview">SCORE: 12000</p>
+            <p id="time-left-preview">80</p>
+          </div>
+          
+          <div id="game-body-background-preview">
+            <div id="game-body-preview">
+              <div>A</div>
+              <div>A</div>
+              <div>A</div>
+              <div>A</div>
+            <div>A</div>
+            <div>A</div>
+            <div>A</div>
+            <div>A</div>
+            <div>A</div>
+            <div>A</div>
+            <div>A</div>
+            <div>A</div>
+            <div>A</div>
+            <div>A</div>
+            <div>A</div>
+            <div>A</div>
+          </div>
+          <!-- <canvas id="canvas"></canvas> -->
         </div>
         
-        <div id="game-body-background-preview">
-          <div id="game-body-preview">
-            <div>A</div>
-            <div>A</div>
-            <div>A</div>
-            <div>A</div>
-          <div>A</div>
-          <div>A</div>
-          <div>A</div>
-          <div>A</div>
-          <div>A</div>
-          <div>A</div>
-          <div>A</div>
-          <div>A</div>
-          <div>A</div>
-          <div>A</div>
-          <div>A</div>
-          <div>A</div>
-        </div>
-        <!-- <canvas id="canvas"></canvas> -->
+      </div>
+    </div>
+    
+    <div id="game-body-container">
+      <div id="stats">
+        <p id="words-amount">WORDS: </p>
+        <p id="score">SCORE: </p>
+        <p id="time-left">80</p>
       </div>
       
+      
+      <div id="game-body-background">
+        <div id="game-body">
+          <p class="user-word"></p>
+        </div>
+      </div>
+      
+      <div id="list-of-words">
+        <button onclick="closeWords()">Close</button>
+      </div>
+      
+      <p id="loading">Loading...</p>
+      
     </div>
-	</div>
-	
-	<div id="game-body-container">
-    <div id="stats">
-      <p id="words-amount">WORDS: </p>
-			<p id="score">SCORE: </p>
-			<p id="time-left">80</p>
-		</div>
-		
     
-		<div id="game-body-background">
-      <div id="game-body">
-        <p class="user-word"></p>
-			</div>
-		</div>
-    
-		<div id="list-of-words">
-      <button onclick="closeWords()">Close</button>
-		</div>
-		
-		<p id="loading">Loading...</p>
-		
-	</div>
-  
-  <div id="settings">
-    <button onclick="showSettings(true)">Settings</button>
-  </div>
+    <div id="settings">
+      <button onclick="showSettings(true)">Settings</button>
+    </div>
 
-  <div id="play-again">
-    <button onclick="restartGame()">Play again</button>
-  </div>
-  
-  <div id="post-game-buttons">
-    <button id="show-words" onclick="showWords()">Show Words</button>
-    <button id="share-results" onclick="generateEmojiBoard()">Copy Results</button>
-    <button id="share-game-link" onclick="copySeed()">Copy Game Link</button>
+    <div id="play-again">
+      <button onclick="restartGame()">Play again</button>
+    </div>
+
+    <div id="post-game-buttons">
+      <button id="show-words" onclick="showWords()">Show Words</button>
+      <button id="share-results" onclick="generateEmojiBoard()">Copy Results</button>
+      <button id="share-game-link" onclick="copySeed()">Copy Game Link</button>
+    </div>
   </div>
 
 

@@ -680,7 +680,7 @@ function solveBoggle(board, dictionary) {
 
 function showWords() {
   document.getElementById("show-words").style.display = "none";
-  document.body.style.overflow = "auto";
+  document.getElementById("container-for-everything").style.overflow = "auto";
   let window = document.getElementById("list-of-words")
   window.style.display = "flex";
   results.forEach(word => {
@@ -705,7 +705,7 @@ function showWords() {
 }
 
 function closeWords() {
-  document.body.style.overflow = "hidden";
+  document.getElementById("container-for-everything").style.overflow = "hidden";
   let window = document.getElementById("list-of-words")
   window.innerHTML = `<button onclick="closeWords()">Close</button>`;
   window.style.display = "none";
