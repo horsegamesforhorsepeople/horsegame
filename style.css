@@ -394,6 +394,9 @@ input[type="color"] {
     top: 50%;
     transform: translate(-50%, -50%);
   }
+  #container-for-everything {
+    height: 100svh;
+  }
 }
 
 @media (max-width: 420px) {
