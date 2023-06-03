@@ -676,9 +676,11 @@ function solveBoggle(board, dictionary) {
 }
 
 function showWords() {
+  let amountOfColumns = 0;
   document.getElementById("show-words").style.display = "none";
   document.getElementById("play-again").style.display = "none";
   document.getElementById("container-for-everything").style.overflow = "scroll";
+  document.getElementById("list-of-words").style.minWidth = "calc(12em*var(--columns))";
   let window = document.getElementById("list-of-words")
   window.style.display = "flex";
   results.forEach(word => {
@@ -691,6 +693,7 @@ function showWords() {
       textAbove.style.fontSize = "2rem";
       row.append(textAbove);
       window.append(row);
+      amountOfColumns++;
     }
     let wordElement = document.createElement("p");
     wordElement.innerText = word;
@@ -699,11 +702,13 @@ function showWords() {
       wordElement.style.fontWeight = "bold";
     } 
     document.getElementById(word.length).append(wordElement);
+    setCSSVar("columns", amountOfColumns);
   });
 }
 
 function closeWords() {
   document.getElementById("container-for-everything").style.overflow = "hidden";
+  document.getElementById("list-of-words").style.minWidth = "100%";
   document.getElementById("play-again").style.display = "block";
   let window = document.getElementById("list-of-words")
   window.innerHTML = `<button onclick="closeWords()">Close</button>`;
