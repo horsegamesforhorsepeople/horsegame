@@ -263,12 +263,13 @@ button {
   position: absolute;
   left: 0;
   top: 0;
-  min-width: 100vw;
-  z-index: 10;
+  width: 100%;
+  z-index: 12;
   display: none;
   justify-content: space-around;
   margin: 0;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #list-of-words > div {
@@ -397,7 +398,7 @@ input[type="color"] {
   #container-for-everything {
     position: absolute;
     height: 100%;
-    width: 100%;
+    min-width: 100%;
     overflow: hidden;
   }
 }
@@ -427,5 +428,6 @@ input[type="color"] {
   }
   #list-of-words {
     overflow: scroll;
+    min-width: 200vw;
   }
 }

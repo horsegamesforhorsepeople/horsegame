@@ -308,7 +308,6 @@ function startGame(firstTime) {
 startGame(true);
 
 function restartGame() {
-  console.log("here")
   document.getElementById("game-body-background").style.display = "none";
   document.getElementById("score").innerText = "SCORE:";
   document.getElementById("words-amount").innerText = "WORDS:";
@@ -328,10 +327,8 @@ function restartGame() {
   gameBody.style.pointerEvents = "auto";
   started = false;
   score = 0;
-  console.log("here 1")
   removeLine()
   startGame(false);
-  console.log("here 2")
 }
 
 
@@ -680,7 +677,8 @@ function solveBoggle(board, dictionary) {
 
 function showWords() {
   document.getElementById("show-words").style.display = "none";
-  document.getElementById("container-for-everything").style.overflow = "auto";
+  document.getElementById("play-again").style.display = "none";
+  document.getElementById("container-for-everything").style.overflow = "scroll";
   let window = document.getElementById("list-of-words")
   window.style.display = "flex";
   results.forEach(word => {
@@ -706,6 +704,7 @@ function showWords() {
 
 function closeWords() {
   document.getElementById("container-for-everything").style.overflow = "hidden";
+  document.getElementById("play-again").style.display = "block";
   let window = document.getElementById("list-of-words")
   window.innerHTML = `<button onclick="closeWords()">Close</button>`;
   window.style.display = "none";
@@ -727,15 +726,10 @@ function generateEmojiBoard() {
     board[3].map(el => ":regional_indicator_" + el + ":").join(" ")
   ].join('')];
 
-  let copyVal = `Words: ${usedWords.length}\nScore: ${score}\n${boardEmojified}`;
-
-  navigator.clipboard.writeText(copyVal);
-}
-
-function copySeed() {
-  summonCopyText()
   let seed = board.join("").split(",").join("");
-  let copyVal = `https://horsegamesforhorsepeople.github.io/horsegame/index.html?seed=${seed}`
+
+  let copyVal = `Words: ${usedWords.length}\nScore: ${score}\n${boardEmojified}\n\nhttps://horsegamesforhorsepeople.github.io/horsegame/index.html?seed=${seed}`;
+
   navigator.clipboard.writeText(copyVal);
 }
 
